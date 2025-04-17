@@ -1,0 +1,244 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #d1d1d1;
+    color: #333;
+    line-height: 1.6;
+    display: flex; /* Enable flexbox for overall layout */
+    min-height: 100vh; /* Ensure body takes at least the full viewport height */
+    flex-direction: column; /* Stack header, main, and nav in mobile view */
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto 0; /* Adjust top margin */
+    padding: 20px;
+    flex-grow: 1; /* Allow main container to grow and push nav to the bottom */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin-left: 4%;
+    font-size: 1.5em;
+    color: #0088cc;
+}
+
+header button {
+    margin-right: 6%;
+    padding: 8px 12px;
+    border: none;
+    background-color: #0088cc; /* Telegram Blue */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+header button:hover {
+    background-color: #006daa;
+}
+
+main {
+    flex-grow: 1; /* Allow main to take available vertical space */
+}
+
+main section {
+    display: none;
+    padding: 15px 0;
+}
+
+/*
+main section.active-section {
+    display:block;
+}
+    */
+
+    main section.active-section {
+        display: block;
+        padding: 15px 0 170px; /* Keep the bottom padding for the sponsored section */
+        min-height: 400px; /* Example: Set a minimum height of 400 pixels */
+        /* OR */
+        /* min-height: 80vh; /* Example: Set a minimum height of 80% of the viewport height */
+    }
+
+.bottom-nav {
+    background-color: #f9f9f9; /* Light gray background for light mode */
+    border-top: 1px solid #ddd;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    /* Mobile View Styling */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.bottom-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.bottom-nav li {
+    flex-grow: 1;
+    text-align: center;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.bottom-nav li.active {
+    color: #0088cc; /* Active link color */
+}
+
+.bottom-nav li svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin: 0 auto 5px;
+}
+
+.bottom-nav li span {
+    font-size: 0.8em;
+}
+
+/* Theme Switch Styles */
+.theme-switch-container {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #0088cc; /* Telegram Blue */
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #0088cc;
+}
+
+input:checked + .slider:before {
+    transform: translateX(16px);
+}
+
+.theme-switch-container span {
+    margin-left: 10px;
+}
+
+/* Desktop/Tablet View Adjustments */
+
+@media (min-width: 680px) {
+    body {
+        flex-direction: row; /* Arrange header, main, and nav horizontally */
+    }
+
+    .container {
+        max-width: 80%; /* Adjust maximum width for larger screens */
+        margin: 30px auto;
+        padding: 30px;
+        flex-grow: 1; /* Allow main container to take available space */
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f4f4f4; /* Match body background */
+        border-bottom: 1px solid #ddd;
+        padding: 15px 20px;
+        z-index: 10; /* Ensure it stays on top */
+        display: flex;
+        justify-content: space-between;
+    }
+
+    main {
+        padding-top: 80px; /* Adjust to avoid overlap with fixed header */
+        padding-left: 120px; /* Space for the side navigation */
+        flex-grow: 1;
+    }
+
+    .bottom-nav {
+        position: fixed;
+        top: 10%; /* Move to the side */
+        left: 0;
+        width: 150px; /* Set a fixed width for the side nav */
+        height: auto%;
+        border-right: 1px solid #ddd;
+        border-top: none;
+        box-shadow: none;
+        padding-top: 60px; /* Space for the header */
+        background-color: #f9f9f9; /* Light gray background for light mode (desktop) */
+    }
+
+    .bottom-nav ul {
+        flex-direction: column;
+        align-items: stretch; /* Make items take full width */
+    }
+
+    .bottom-nav li {
+        padding: 15px 10px;
+        text-align: center;
+    }
+
+    .bottom-nav li svg {
+        margin: 0 auto 5px;
+        display: block;
+    }
+
+    .bottom-nav li span {
+        font-size: 0.9em;
+    }
+}
+
+/* Further adjustments for larger desktops if needed */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}

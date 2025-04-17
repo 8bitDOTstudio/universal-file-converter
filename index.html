@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal File Converter</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css" media="screen and (prefers-color-scheme: dark)">
+    <style>
+        .sponsored-section {
+            width: 100%;
+            height: 150px;
+            background-color: #eee; /* Light background for visibility */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1em;
+            color: #555;
+            box-sizing: border-box; /* Ensure padding/border doesn't affect the 100% width */
+            padding: 10px; /* Optional padding for content inside */
+            text-align: center; /* Center any text content */
+            margin-top: 20px; /* Add some space above the sponsored section */
+
+            /* Stick to the bottom */
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        /* Ensure the main content area has enough padding at the bottom */
+        main section {
+            display: none;
+            padding: 15px 0 170px; /* Add extra bottom padding (150px height + some margin) */
+            position: relative; /* Needed for absolute positioning of sponsored section */
+        }
+
+        main section.active-section {
+            display: block;
+        }
+
+        .dark-mode .sponsored-section {
+            background-color: #333;
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Universal File Converter</h1>
+            <button id="theme-toggle">Toggle Theme</button>
+        </header>
+
+        <main>
+            <section id="home" class="active-section">
+                <h2>Welcome</h2>
+                <p>This is the home section of the Universal File Converter.</p>
+                <p>Select an option from the menu below to get started.</p>
+                <div class="sponsored-section">
+                    <span>Sponsored Content Area (100% width, 150px height, Stick to Bottom)</span>
+                </div>
+            </section>
+            <section id="converter">
+                <h2>File Converter</h2>
+                <p>This section will eventually house the file conversion tools.</p>
+                <div class="sponsored-section">
+                    <span>Sponsored Content Area (100% width, 150px height, Stick to Bottom)</span>
+                </div>
+            </section>
+            <section id="utilities">
+                <h2>Utilities</h2>
+                <p>Here are some extra utilities for file manipulation.</p>
+                <div class="sponsored-section">
+                    <span>Sponsored Content Area (100% width, 150px height, Stick to Bottom)</span>
+                </div>
+            </section>
+            <section id="settings">
+                <h2>Settings</h2>
+                <p>Here you can adjust the app settings, including theme.</p>
+                <div class="theme-switch-container">
+                    <label class="switch">
+                        <input type="checkbox" id="manual-theme-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                    <span>Enable Dark Mode</span>
+                </div>
+                <div class="sponsored-section">
+                    <span>Sponsored Content Area (100% width, 150px height, Stick to Bottom)</span>
+                </div>
+            </section>
+            <section id="about">
+                <h2>About</h2>
+                <p>A simple Universal File Converter for the Global Telegram Community.</p>
+                <p>Developed with ❤️.</p>
+                <div class="sponsored-section">
+                    <span>Sponsored Content Area (100% width, 150px height, Stick to Bottom)</span>
+                </div>
+            </section>
+        </main>
+
+        <nav class="bottom-nav">
+            <ul>
+                <li data-section="home" class="active">
+                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8h5Z"/></svg>
+                    <span>Home</span>
+                </li>
+                <li data-section="converter">
+                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M18 17H6V15H18V17M18 13H6V11H18V13M18 9H6V7H18V9M3 21V3H5V21H3M21 21V3H19V21H21Z"/></svg>
+                    <span>Converter</span>
+                </li>
+                <li data-section="utilities">
+                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M3 17v-6h9v6H3m0-8V3h9v6H3m10 8v-6h9v6h-9m0-8V3h9v6h-9"/></svg>
+                    <span>Utilities</span>
+                </li>
+                <li data-section="settings">
+                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.81c.19-.17.2-.46.04-.63l-2.5-4.32c-.16-.28-.42-.32-.67-.12l-2.15 1.75c-.3-.23-.6-.41-.92-.58L16.9 2.14c-.03-.31-.3-.53-.61-.53H7.7c-.31 0-.58.22-.61.53l-.33 2.85c-.32.17-.62.35-.92.58L3.09 3.6c-.25-.2-.51-.16-.67.12L-.06 7.92c-.16.17-.15.46.04.63l2.11 1.81c.04.32.07.65.07.98s-.03.66-.07-.98l-2.11-1.81c-.19.17-.2.46-.04-.63l2.5 4.32c.16.28.42.32.67.12l2.15-1.75c.3.23.6.41.92-.58l.33 2.85c.03.31.3.53.61.53h8.6c.31 0 .58-.22.61-.53l.33-2.85c.32-.17.62-.35.92-.58l2.15 1.75c.25.2.51.16.67-.12l2.5-4.32c.19-.17.2-.46-.04-.63l-2.11-1.81zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg>
+                    <span>Settings</span>
+                </li>
+                <li data-section="about">
+                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 16a3 3 0 0 1-3-3a3 3 0 0 1 3-3a3 3 0 0 1 3 3a3 3 0 0 1-3 3m0-8a5 5 0 0 0-5 5a5 5 0 0 0 5 5a5 5 0 0 0 5-5a5 5 0 0 0-5-5m0 1a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0-7a9 9 0 0 1 9 9a9 9 0 0 1-9 9a9 9 0 0 1-9-9a9 9 0 0 1 9-9"/></svg>
+                    <span>About</span>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

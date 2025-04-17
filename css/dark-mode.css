@@ -1,0 +1,35 @@
+body {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+}
+
+header {
+    border-bottom-color: #333;
+}
+
+header button {
+    background-color: #333;
+    color: #eee;
+}
+
+header button:hover {
+    background-color: #555;
+}
+
+.bottom-nav {
+    background-color: #0e0e0e;
+    border-top-color: #444444;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.bottom-nav li.active {
+    color: #00aaff; /* A brighter blue for dark mode */
+}
+
+.switch .slider {
+    background-color: #555;
+}
+
+input:checked + .slider {
+    background-color: #00aaff;
+}

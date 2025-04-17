@@ -55,6 +55,17 @@ main section {
     padding: 15px 0;
 }
 
+
+/* Style for anchor links */
+a {
+    color: #007bff; /* A standard blue for light mode */
+}
+
+/* Override for dark mode in dark-mode.css */
+.dark-mode a {
+    color: #a0d4ff; /* A lighter blue or cyan for better visibility on dark backgrounds */
+}
+
 /*
 main section.active-section {
     display:block;

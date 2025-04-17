@@ -33,3 +33,5 @@ header button:hover {
 input:checked + .slider {
     background-color: #00aaff;
 }
+
+.dark-mode a { color: #a0d4ff; }

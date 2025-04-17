@@ -31,12 +31,6 @@ header h1 {
     color: #0088cc;
 }
 
-header p {
-    margin-left: 4%;
-    font-size: 5em;
-    color: #0088cc;
-}
-
 header button {
     margin-right: 6%;
     padding: 8px 12px;
